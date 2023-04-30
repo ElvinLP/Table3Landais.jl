@@ -40,6 +40,14 @@ The code replicates exactly the results of the paper up to two exceptions:
 1. We think the column names "duratuiclaimed" and "duratuipaid" are inverted in the paper. When running the analysis for one variable, we systematically obtain the results of the other column and the other way around. The Stata code provided in the replication package outputs the same results as our package.
 2. The coefficient we obtain for age in the first period is -3.277 and not -0.277 as featured in the paper. We believe it is a typo in the paper since the number of observations, standard errors, optimal polynomial value and p-value we obtain are the same as reported in the paper. The Stata code provided in the replication package gives a coefficient of -3.277 too.
 
+# Downloading and using Table3Landais.jl
+
+To use this package: 
+1. On the GitHub page of [Table3Landais](https://github.com/ElvinLP/Table3Landais.jl), dowload the .zip file of the main branch or clone it on your computer.
+2. Open the downloaded repository with VsCode
+3. In the Julia REPL, type the command: include("src/Table3Landais.jl")
+4. To run the functions, type Table3Landais.cleandata("pathtofolder") and Table3Landais.Table3("pathtofolder") in the Julia REPL where "pathtofolder" is the correctly specified path to the "Prog_AEJ_RKD" folder on your computer, as described in the "Input" section of this documentation.
+
 ```@index
 ```
 
