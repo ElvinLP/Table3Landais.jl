@@ -39,7 +39,7 @@ For example:
 Output:
 The code replicates exactly the results of the paper up to two exceptions:
 1. We think the column names "duratuiclaimed" and "duratuipaid" are inverted in the paper. When running the analysis for one variable, we systematically obtain the results of the other column and the other way around. The Stata code provided in the replication package outputs the same results as our package.
-2. The coefficient we obtain for age in the first period is -3.277 and not 0.277 as featured in the paper. We believe it is a typo in the paper since the number of observations, standard errors, optimal polynomial value and p-value we obtain are the same as reported in the paper. The Stata code provided in the replication package gives a coefficient of 0.277 too. 
+2. The coefficient we obtain for age in the first period is -3.277 and not 0.277 as featured in the paper. We believe it is a typo in the paper since the number of observations, standard errors, optimal polynomial value and p-value we obtain are the same as reported in the paper. The Stata code provided in the replication package gives a coefficient of 0.277 too.
 
 ```@index
 ```
