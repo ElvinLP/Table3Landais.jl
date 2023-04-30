@@ -21,9 +21,11 @@ The raw files needed to replicate Table 3 of the paper are:
 The package is made of 2 functions:
 
 1. cleandata()
+
 Cleans the raw "cwbh_LA.dta" file and deflate some variables using "cpi2.dta" to produce "base_2_LA.dta", the 282,968×178 baseline sample used for the regression discontinuity analysis. This file is stored in the "Prog_AEJ_RKD\Data" repository. The compilation takes around 2 minutes.
 
 2. Table3()
+
 Iterates over the 3 periods, 7 outcome variables and 3 polynomial specifications to output a LaTex code that is to be pasted in a LaTex compiler to produce Table 3 of the paper. It also produces a temporary CSV file, "base_reg_LA.csv", which serves as the base file for each specification, and stores the results of all the 63 different specifications in a CSV file called "Table_3.csv." which is stored in the "Prog_AEJ_RKD\Output" repository. In Table 3 of the paper, only the polynomial specifications with the lowest Akaike Information Criterion (AIC) are presented. The compilation takes around 12 minutes and the period, outcome variable, and polynomial specification are displayed at each iteration.
 
 # Input
