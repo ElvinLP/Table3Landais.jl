@@ -26,6 +26,8 @@ function cleandata(pathfolder::String)
 df = readstat("$pathfolder/Data/rawdata/cwbh_LA.dta")
 df = DataFrame(df)
 
+println("Data are loaded")
+
 # Key point: all claims are identified by id # of the unemployed + date benefit year begins
 # we keep only claims with enough wages to be eligible for benefits
 subset!(df, :r2v18 => x -> x .== 1, skipmissing=true)
@@ -208,6 +210,8 @@ end
 transform!(df, [:date_week_certif_2] => ((x1) -> Dates.format.(x1, "yyyy-mm")) => :date)
 sort!(df, [:date])
 
+println("Data are cleaned")
+
 df2 = readstat("$pathfolder/Data/cpi2.dta")
 df2 = DataFrame(df2)
 meany = mean(df2[df2.year .== 2010,:avgcpi])
@@ -318,6 +322,9 @@ df[!,:dependents] = ifelse.(coalesce.(df.dependents .== "missing", false), missi
 df[!,:dependents] = passmissing(x -> parse.(Float64,x)).(df.dependents)
 
 writestat("$pathfolder/Data/base_2_LA.dta", df)
+
+println("Data are saved")
+
 end
 
 
@@ -792,6 +799,8 @@ for period = 1:3
     end
 end
 
+mkdir("$pathfolder/Results")
+
 CSV.write("$pathfolder/Results/Table_3.csv", Table_3)
 
 Table_3 = DataFrame(CSV.File("$pathfolder/Results/Table_3.csv"))
@@ -834,6 +843,7 @@ FinalTable = append!(Table_3_1,Table_3_2)
 FinalTable = append!(FinalTable,Table_3_3)
 println(FinalTable)
 return latexify(FinalTable, env = :tabular, head = ["","Durationofinitialspell","DurationofUIpaid","DurationofUIclaimed","Age","Yearsofeducation","Male","Dependents"]) |> print
+
 end
 
 end
