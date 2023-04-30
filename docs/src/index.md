@@ -22,7 +22,7 @@ The package is made of 2 functions, cleandata() and Table3(). They are to be run
 
 1. cleandata()
 
-Cleans the raw "cwbh_LA.dta" file and expresses variables "earnings" and "wba" in real dollars using "cpi2.dta" to produce "base_2_LA.dta", the 282,968×178 baseline sample used for the regression kink design. This file is stored in the "Prog_AEJ_RKD\Data" repository. The compilation takes around 2 minutes.
+Cleans the raw "cwbh_LA.dta" file and expresses variables "earnings" and "wba" in real dollars using "cpi2.dta". It produces the file "base_2_LA.dta", the 282,968×178 baseline sample used for the regression kink design. This file is stored in the "Prog_AEJ_RKD\Data" repository. The compilation takes around 2 minutes.
 
 2. Table3()
 
